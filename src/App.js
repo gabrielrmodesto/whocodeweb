@@ -2,6 +2,7 @@ import React from "react";
 import "./global.css";
 import "./App.css";
 import "./Sidebar.css";
+import "./Main.css";
 
 function App() {
   return (
@@ -30,7 +31,66 @@ function App() {
           <button type="submit">Salvar</button>
         </form>
       </aside>
-      <main></main>
+      <main>
+        <ul>
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars2.githubusercontent.com/u/15326732?s=460&v=4"
+                alt="user image"
+              />
+              <div className="user-info">
+                <strong>Gabriel Modesto</strong>
+                <span>ReactJS, React Native, PHP</span>
+              </div>
+            </header>
+            <p>Full Stack Developer, Systems Analyst, Clara's Father, Thais' Husband and Rugby Player</p>
+            <a href="https://github.com/gabrielrmodesto">Veja o perfil no github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars2.githubusercontent.com/u/15326732?s=460&v=4"
+                alt="user image"
+              />
+              <div className="user-info">
+                <strong>Gabriel Modesto</strong>
+                <span>ReactJS, React Native, PHP</span>
+              </div>
+            </header>
+            <p>Full Stack Developer, Systems Analyst, Clara's Father, Thais' Husband and Rugby Player</p>
+            <a href="https://github.com/gabrielrmodesto">Veja o perfil no github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars2.githubusercontent.com/u/15326732?s=460&v=4"
+                alt="user image"
+              />
+              <div className="user-info">
+                <strong>Gabriel Modesto</strong>
+                <span>ReactJS, React Native, PHP</span>
+              </div>
+            </header>
+            <p>Full Stack Developer, Systems Analyst, Clara's Father, Thais' Husband and Rugby Player</p>
+            <a href="https://github.com/gabrielrmodesto">Veja o perfil no github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars2.githubusercontent.com/u/15326732?s=460&v=4"
+                alt="user image"
+              />
+              <div className="user-info">
+                <strong>Gabriel Modesto</strong>
+                <span>ReactJS, React Native, PHP</span>
+              </div>
+            </header>
+            <p>Full Stack Developer, Systems Analyst, Clara's Father, Thais' Husband and Rugby Player</p>
+            <a href="https://github.com/gabrielrmodesto">Veja o perfil no github</a>
+          </li>
+        </ul>
+      </main>
     </div>
   );
 }
