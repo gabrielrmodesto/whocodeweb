@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./global.css";
 import "./App.css";
 import "./Sidebar.css";
 import "./Main.css";
 
 function App() {
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const { latitude, longitude } = position.coords;
+
+        setLatitude(latitude);
+        setLongitude(longitude);
+      },
+      error => {
+        console.log(error);
+      },
+      {
+        timeout: 30000
+      }
+    );
+  }, []);
   return (
     <div id="app">
       <aside>
@@ -21,11 +40,25 @@ function App() {
           <div className="input-group">
             <div className="input-block">
               <label htmlFor="latitude">Latitude</label>
-              <input name="latitude" id="latitude" required />
+              <input
+                type="number"
+                name="latitude"
+                id="latitude"
+                required
+                value={latitude}
+                onChange={e => setLatitude(e.target.value)}
+              />
             </div>
             <div className="input-block">
               <label htmlFor="longitude">Longitude</label>
-              <input name="longitude" id="longitude" required />
+              <input
+                type="number"
+                name="longitude"
+                id="longitude"
+                required
+                value={longitude}
+                onChange={e => setLongitude(e.target.value)}
+              />
             </div>
           </div>
           <button type="submit">Salvar</button>
@@ -37,57 +70,77 @@ function App() {
             <header>
               <img
                 src="https://avatars2.githubusercontent.com/u/15326732?s=460&v=4"
-                alt="user image"
+                alt="user profile"
               />
               <div className="user-info">
                 <strong>Gabriel Modesto</strong>
                 <span>ReactJS, React Native, PHP</span>
               </div>
             </header>
-            <p>Full Stack Developer, Systems Analyst, Clara's Father, Thais' Husband and Rugby Player</p>
-            <a href="https://github.com/gabrielrmodesto">Veja o perfil no github</a>
+            <p>
+              Full Stack Developer, Systems Analyst, Clara's Father, Thais'
+              Husband and Rugby Player
+            </p>
+            <a href="https://github.com/gabrielrmodesto">
+              Veja o perfil no github
+            </a>
           </li>
           <li className="dev-item">
             <header>
               <img
                 src="https://avatars2.githubusercontent.com/u/15326732?s=460&v=4"
-                alt="user image"
+                alt="user profile"
               />
               <div className="user-info">
                 <strong>Gabriel Modesto</strong>
                 <span>ReactJS, React Native, PHP</span>
               </div>
             </header>
-            <p>Full Stack Developer, Systems Analyst, Clara's Father, Thais' Husband and Rugby Player</p>
-            <a href="https://github.com/gabrielrmodesto">Veja o perfil no github</a>
+            <p>
+              Full Stack Developer, Systems Analyst, Clara's Father, Thais'
+              Husband and Rugby Player
+            </p>
+            <a href="https://github.com/gabrielrmodesto">
+              Veja o perfil no github
+            </a>
           </li>
           <li className="dev-item">
             <header>
               <img
                 src="https://avatars2.githubusercontent.com/u/15326732?s=460&v=4"
-                alt="user image"
+                alt="user profile"
               />
               <div className="user-info">
                 <strong>Gabriel Modesto</strong>
                 <span>ReactJS, React Native, PHP</span>
               </div>
             </header>
-            <p>Full Stack Developer, Systems Analyst, Clara's Father, Thais' Husband and Rugby Player</p>
-            <a href="https://github.com/gabrielrmodesto">Veja o perfil no github</a>
+            <p>
+              Full Stack Developer, Systems Analyst, Clara's Father, Thais'
+              Husband and Rugby Player
+            </p>
+            <a href="https://github.com/gabrielrmodesto">
+              Veja o perfil no github
+            </a>
           </li>
           <li className="dev-item">
             <header>
               <img
                 src="https://avatars2.githubusercontent.com/u/15326732?s=460&v=4"
-                alt="user image"
+                alt="user profile"
               />
               <div className="user-info">
                 <strong>Gabriel Modesto</strong>
                 <span>ReactJS, React Native, PHP</span>
               </div>
             </header>
-            <p>Full Stack Developer, Systems Analyst, Clara's Father, Thais' Husband and Rugby Player</p>
-            <a href="https://github.com/gabrielrmodesto">Veja o perfil no github</a>
+            <p>
+              Full Stack Developer, Systems Analyst, Clara's Father, Thais'
+              Husband and Rugby Player
+            </p>
+            <a href="https://github.com/gabrielrmodesto">
+              Veja o perfil no github
+            </a>
           </li>
         </ul>
       </main>
