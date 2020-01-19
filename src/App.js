@@ -1,9 +1,16 @@
 import React from 'react';
+import './global.css';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
+    <div id="app">
+      <aside>
+
+      </aside>
+      <main>
+
+      </main>
     </div>
   );
 }
