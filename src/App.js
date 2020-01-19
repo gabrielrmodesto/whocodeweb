@@ -3,10 +3,13 @@ import "./global.css";
 import "./App.css";
 import "./Sidebar.css";
 import "./Main.css";
+import api from './services/api';
 
 function App() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
+  const [github_username, setGithubUsername] = useState("");
+  const [techs, setTechs] = useState("");
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -24,18 +27,36 @@ function App() {
       }
     );
   }, []);
+
+  async function handleAddDev(event){
+    event.preventDefault();
+
+
+  }
   return (
     <div id="app">
       <aside>
         <strong>Cadastrar</strong>
-        <form>
+        <form onSubmit={handleAddDev}>
           <div className="input-block">
             <label htmlFor="username_github">Username github</label>
-            <input name="username_github" id="username_github" required />
+            <input
+              name="username_github"
+              id="username_github"
+              required
+              value={github_username}
+              onChange={e => setGithubUsername(e.target.value)}
+            />
           </div>
           <div className="input-block">
             <label htmlFor="techs">Techs</label>
-            <input name="techs" id="techs" required />
+            <input
+              name="techs"
+              id="techs"
+              required
+              value={techs}
+              onChange={e => setTechs(e.target.value)}
+            />
           </div>
           <div className="input-group">
             <div className="input-block">
