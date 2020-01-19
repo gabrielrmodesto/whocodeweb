@@ -31,7 +31,13 @@ function App() {
   async function handleAddDev(event){
     event.preventDefault();
 
-
+    const response = await api.post('/devs', {
+      github_username,
+      techs,
+      latitude,
+      longitude,
+    });
+    console.log(response.data);
   }
   return (
     <div id="app">
