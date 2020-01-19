@@ -7,6 +7,11 @@ main ul{
     gap: 20px;
     list-style: none;
 }
+@media (max-width: 650px){
+    main ul{
+        grid-template-columns: 1fr;
+    }
+}
 li.dev-item{
     background: #ffffff;
     box-shadow: 0 0 14px 0 rgba(0,0,0,0.2);
